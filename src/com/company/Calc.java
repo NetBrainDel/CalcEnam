@@ -5,29 +5,30 @@ public enum Calc {
         public String print(){
             return "Сумму";
         }
-        public double result(double x, double y)throws Exceptions{
+        public String result(double x, double y)throws Exceptions{
             double a = setX(x)+setY(y);
             System.out.println("Ваш результат: "+a);
             System.out.println(" ");
-            return a;
+            return "";
         }
     },
     MIN(){
         public String print(){
             return "Минус";
         }
-        public double result(double x, double y)throws Exceptions{
+        public String result(double x, double y)throws Exceptions{
             double a = setX(x)-setY(y);
-            System.out.println("Ваш результат: "+a);
-            System.out.println(" ");
-            return a;
+//            System.out.println("Ваш результат: "+a);
+//            System.out.println(" ");
+            String str = Double.toString(a);
+            return str;
         }
     },
     DEL(){
         public String print(){
             return "Деление";
         }
-        public double result(double x, double y)throws Exceptions{
+        public String result(double x, double y)throws Exceptions{
             if(getY(y)==0){
                 System.out.println("На 0 не делят \n попробуй еще");
                 Main.main();
@@ -36,25 +37,25 @@ public enum Calc {
             double a = setX(x)/setY(y);
             System.out.println("Ваш результат: "+a);
             System.out.println(" ");
-            return a;
+            return "a";
         }
     },
     MUL(){
         public String print(){
             return "Умножение";
         }
-        public double result(double x, double y) throws Exceptions {
+        public String result(double x, double y) throws Exceptions {
             double a = setX(x)*setY(y);
             System.out.println("Ваш результат: "+a);
             System.out.println(" ");
-            return a;
+            return "a";
         }
     };
     private double x;
     private double y;
 
 
-    public abstract double result(double x,double y)throws Exceptions;
+    public abstract String result(double x,double y)throws Exceptions;
     public abstract String print();
 
     public double getX(double x) {

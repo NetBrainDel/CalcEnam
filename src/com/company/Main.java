@@ -14,15 +14,16 @@ public class Main {
 
 
             for (int i = 3; i >= 0; i--) {
-
-                System.out.println("""
-                        Выберите операцию:\s
-                          0 = сумма\s
-                          1 = минус\s
-                          2 = деление\s
-                          3 = умножить\s
-                          4 = очистить консоль\s""");
-
+                for (Calc str: Calc.values() ) {
+                    System.out.println(str.ordinal()+" - "+ str);
+                }
+//                System.out.println("""
+//                        Выберите операцию:\s
+//                          0 = сумма\s
+//                          1 = минус\s
+//                          2 = деление\s
+//                          3 = умножить\s
+//                          4 = очистить консоль\s""");
 
                 int operations = scanner.nextInt();
                 if (operations < 4) {
@@ -34,8 +35,8 @@ public class Main {
                     y = scanner.nextDouble();
 
 
-//                System.out.println("Ваш результат по операции: " + Calc.values()[operations] + " = "
-//                        + Calc.values()[operations].result(x, y));
+                System.out.println("Ваш результат по операции: " + Calc.values()[operations] + " = "
+                        + Calc.values()[operations].result(x, y));
 
                     Calc.values()[operations].result(x, y);
 
